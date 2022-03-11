@@ -10,10 +10,11 @@ terraform {
       version = "~> 3.27"
     }
   }
-  backend "s3" {
-    bucket = "zbeda-state"
-    key = "prod/terraform.tfstate"
-    region = "us-east-1"
+  backend "remote" {
+    organization = "zbeda"
+    workspaces {
+      name = "aws"
+    }
   }
 }
 
