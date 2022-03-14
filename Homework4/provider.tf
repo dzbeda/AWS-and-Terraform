@@ -10,7 +10,13 @@ terraform {
       version = "~> 3.27"
     }
   }
-  backend "remote" {
+//  backend "remote" {
+//    organization = "zbeda"
+//    workspaces {
+//      name = "aws"
+//    }
+//  }
+  cloud {
     organization = "zbeda"
     workspaces {
       name = "aws"
