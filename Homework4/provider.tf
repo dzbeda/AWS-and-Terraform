@@ -7,23 +7,17 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.27"
+      version = "~> 3.74.3"
     }
   }
-//  backend "remote" {
-//    organization = "zbeda"
-//    workspaces {
-//      name = "aws"
-//    }
-//  }
   cloud {
+    //hostname = "app.terraform.io"
     organization = "zbeda"
     workspaces {
       name = "aws"
     }
   }
 }
-
 # configure provider
 provider "aws" {
   region     = var.aws_region
